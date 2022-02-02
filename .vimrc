@@ -51,8 +51,8 @@ set hlsearch
 
 "背景色
 set background=dark
-highlight PMenu ctermfg=0 ctermbg=27 guifg=black guibg=darkgrey
-highlight PMenuSel ctermfg=27 ctermbg=8 guifg=darkgrey guibg=black
+highlight PMenu ctermfg=15 ctermbg=8 guifg=black guibg=darkgrey
+highlight PMenuSel ctermfg=8 ctermbg=15 guifg=darkgrey guibg=black
 
 "显示匹配
 set showmatch
