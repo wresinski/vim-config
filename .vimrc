@@ -51,8 +51,8 @@ set hlsearch
 
 "背景色
 set background=dark
-highlight PMenu ctermfg=11 ctermbg=8 guifg=black guibg=darkgrey
-highlight PMenuSel ctermfg=8 ctermbg=11 guifg=darkgrey guibg=black
+highlight PMenu ctermfg=11 ctermbg=238 guifg=black guibg=darkgrey
+highlight PMenuSel ctermfg=238 ctermbg=11 guifg=darkgrey guibg=black
 
 "显示匹配
 set showmatch
@@ -151,6 +151,7 @@ call plug#end()
 """""""""""""""""vim-airline"""""""""""""""""""""
 let g:airline_powerline_fonts=1
 let g:airline_theme="deus"
+let g:airline#extensions#tabline#enabled = 1
 """"""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""vim-auto-popmenu"""""""""""""""""""""
