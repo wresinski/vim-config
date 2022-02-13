@@ -8,7 +8,7 @@ set nu
 
 "设置粘帖模式
 "set paste
-set pastetoggle=<F5>
+set pastetoggle=<F8>
 
 "启动时隐去援助提示
 set shortmess=atI
@@ -120,6 +120,17 @@ endif
 
 set tags+=~/.vim/systags
 
+set backspace=indent,eol,start
+"""""""""""""""""gvim"""""""""""""""""""""
+if has('gui_running')
+    let g:vimspector_enable_mappings = 'HUMAN'
+    syntax enable
+    filetype plugin indent on
+    set gfn=Consolas\ NF:h10
+    colorscheme molokai
+endif
+""""""""""""""""""""""""""""""""""""""""""""""
+
 """""""""""""""""Plugin"""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 "Plug 'ZSaberLv0/ZFVimIM'
@@ -130,6 +141,7 @@ Plug 'vim-airline/vim-airline-themes'
 "Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
+Plug 'puremourning/vimspector'
 call plug#end()
 
 """""""""""""""""ZFVimIM"""""""""""""""""""""
@@ -214,12 +226,10 @@ let g:airline#extensions#tabline#enabled = 1
 
 """""""""""""""""NERDTree"""""""""""""""""""""
 nnoremap <leader>n :NERDTreeFocus<CR>
-map <F6> :NERDTreeToggle<CR>
+map <F7> :NERDTreeToggle<CR>
 """"""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""coc-nvim"""""""""""""""""""""
-let g:coc_node_path = '/cygdrive/d/Program Files/nodejs/node'
-
 let g:coc_global_extensions = ['coc-clangd']
 
 " TextEdit might fail if hidden is not set.
@@ -280,4 +290,18 @@ nmap <leader>rn <Plug>(coc-rename)
 " Formatting selected code.
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
+""""""""""""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""vimspector"""""""""""""""""""""
+let g:vimspector_test_plugin_path = expand( '<sfile>:p:h:h' )
+set mouse=a
+set noequalalways
+let mapleader = ','
+let maplocalleader = "\<Space>"
+
+let &runtimepath = &runtimepath . ',' . g:vimspector_test_plugin_path
+
+filetype plugin indent on
+syntax enable
+let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
 """"""""""""""""""""""""""""""""""""""""""""""
