@@ -123,11 +123,20 @@ set tags+=~/.vim/systags
 set backspace=indent,eol,start
 """""""""""""""""gvim"""""""""""""""""""""
 if has('gui_running')
-    let g:vimspector_enable_mappings = 'HUMAN'
-    syntax enable
-    filetype plugin indent on
     set gfn=Consolas\ NF:h10
     colorscheme molokai
+    "Toggle Menu and Toolbar
+    set guioptions-=l
+    set guioptions-=r
+    set guioptions-=m
+    set guioptions-=T
+    map <silent> <F2> :if &guioptions =~# 'T' <Bar>
+                \set guioptions-=T <Bar>
+                \set guioptions-=m <bar>
+                \else <Bar>
+                \set guioptions+=T <Bar>
+                \set guioptions+=m <Bar>
+                \endif<CR>
 endif
 """"""""""""""""""""""""""""""""""""""""""""""
 
