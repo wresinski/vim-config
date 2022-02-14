@@ -121,6 +121,8 @@ endif
 set tags+=~/.vim/systags
 
 set backspace=indent,eol,start
+
+set autochdir
 """""""""""""""""gvim"""""""""""""""""""""
 if has('gui_running')
     set gfn=Consolas\ NF:h10
