@@ -122,7 +122,10 @@ set tags+=~/.vim/systags
 
 set backspace=indent,eol,start
 
-set autochdir
+exec 'cd ' . fnameescape('~/')
+"set autochdir
+nmap <silent> <F3> :cd %:h<CR>
+set ignorecase
 """""""""""""""""gvim"""""""""""""""""""""
 if has('gui_running')
     set gfn=Consolas\ NF:h10
@@ -153,6 +156,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'puremourning/vimspector'
+"Plug 'APZelos/blamer.nvim'
 call plug#end()
 
 """""""""""""""""ZFVimIM"""""""""""""""""""""
