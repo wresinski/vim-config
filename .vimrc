@@ -122,10 +122,11 @@ set tags+=~/.vim/systags
 
 set backspace=indent,eol,start
 
-exec 'cd ' . fnameescape('D:/home/AsterUser')
+exec 'cd ' . fnameescape('~/')
 "set autochdir
 nmap <silent> <F3> :cd %:h<CR>
 set ignorecase
+tnoremap <c-b> <c-\><c-n>
 """""""""""""""""gvim"""""""""""""""""""""
 if has('gui_running')
     set noimdisable
