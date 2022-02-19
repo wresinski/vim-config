@@ -122,12 +122,13 @@ set tags+=~/.vim/systags
 
 set backspace=indent,eol,start
 
-exec 'cd ' . fnameescape('~/')
+exec 'cd ' . fnameescape('D:/home/AsterUser')
 "set autochdir
 nmap <silent> <F3> :cd %:h<CR>
 set ignorecase
 """""""""""""""""gvim"""""""""""""""""""""
 if has('gui_running')
+    set noimdisable
     set gfn=Consolas\ NF:h10
     colorscheme molokai
     "Toggle Menu and Toolbar
